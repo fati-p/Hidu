@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDU_inicio</title>
+    <link rel="stylesheet" href="diseño/inicio.css">
+    <style>
+        #page-content {
+            position: relative;
+            transition: transform 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+   
+ <header class="menu">
+ <nav>
+   <a href="Inicio.html"> <img src="image/WhatsApp_Image_2024-05-01_at_5.40.54_PM-removebg-preview.png" alt=""></a>
+    <ul>
+        <li><a href="Inicio.html">INICIO</a></li>
+        <li><a href="A cerca.html">A CERCA</a></li>
+        <li><a href="Tienda.html">PRODUCTOS</a></li>
+        <li><a href="Contacto.html">CONTACTOS</a></li>
+    </ul>
+ </nav>
+</header>
+
+<div id="page-content">
+    <!-- El resto de tu página aquí -->
+    
+    <script>
+        // Añade un detector de eventos para el evento 'click' en todos los elementos <a>
+    document.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Evita la acción predeterminada (navegación).
+
+            // Obtiene la URL de destino
+            let href = this.getAttribute('href');
+
+            // Desliza el contenido de la página actual hacia la izquierda
+            document.getElementById('page-content').style.transform = 'translateX(-100%)';
+
+            // Una vez que la animación de deslizamiento ha terminado, navega a la siguiente página
+            setTimeout(() => {
+                // Añade la transición al historial del navegador
+                history.pushState(null, null, href);
+                // Recarga la página para aplicar la transición de entrada
+                location.reload();
+            }, 500); // El retraso debe coincidir con la duración de la animación de deslizamiento
+        });
+    });
+
+    // Necesitamos deslizar el contenido de la página cuando se carga
+    window.addEventListener('load', () => {
+        document.getElementById('page-content').style.transform = 'translateX(0)';
+    });
+
+    // Y también cuando se navega a través del historial del navegador
+    window.addEventListener('popstate', () => {
+        // Desliza el contenido de la página desde la derecha
+        document.getElementById('page-content').style.transform = 'translateX(0)';
+    });
+
+    </script>
+        
+    <div align="right">
+       
+        <style>
+            .slider {
+                width: 50%;
+                height: 400px;
+                overflow: hidden;
+                align-items: center;
+            }
+
+            .slides {
+                display: flex;
+                width: 600%;
+                animation: carousel 50s infinite;
+                align-items: center;
+            }
+
+            .slides img {
+                width:30.66%;
+                height: 350px;
+                margin: 2rem;
+            }
+
+            @keyframes carousel {
+                0% {margin-left: 0;}
+                15% {margin-left: 0;}
+                20% {margin-left: -100%;}
+                35% {margin-left: -100%;}
+                40% {margin-left: -200%;}
+                55% {margin-left: -200%;}
+                60% {margin-left: -300%;}
+                75% {margin-left: -300%;}
+                80% {margin-left: -400%;}
+                95% {margin-left: -400%;}
+                100% {margin-left: -500%;}
+            }
+        </style>
+
+    <body>
+        <div class="des" align="left">
+            <h2>
+                ¡Bienvenidos a nuestra página web! Somos un negocio<br> <br>moderno
+                 especializado en el diseño personalizado de <br><br> productos.
+                 Nuestra pasión
+                 es transformar tus ideas en <br><br>realidad,
+                 creando productos únicos que reflejan tu estilo y personalidad.<br><br>
+                  ¡Estamos emocionados de ayudarte a dar vida a tus ideas! 😊
+            </h2>
+        </div>
+        <div class="slider" align="center">
+            <div class="slides" id="slides">
+                <img src="image/PERSONALIZABLE.png"  alt="">
+                <img src="image/PERSONALIZABLE.gif" alt="">
+                <img src="image/PERSONALIZABLE (3).png" alt="">
+                <img src="image/PERSONALIZABLE (2).png" alt="">
+                <img src="image/PERSONALIZABLE (1).png" alt="">
+                <img src="image/PERSONALIZABLE (1).gif" alt="">
+            </div>
+        </div>
+        
+        
+    </div>
+
+</div> <!-- Cierre del div con id "page-content" -->
+
+</body>
+</html>
