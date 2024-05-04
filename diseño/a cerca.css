@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
+  
     
     body {
         min-height: 100vh;
         min-width: 100vw;
         background: linear-gradient(to bottom,  #3f063f, #000712);
+       
     }
     
     
@@ -56,3 +59,21 @@
         height: 400px;
       }
       
+
+      .text{
+        text-align: center;
+        color: #ffffff;
+        font-size: 10px;
+
+      }
+
+      @keyframes cambioDeColor {
+        0%   {color: rgb(84, 4, 84);}
+        50%  {color: rgb(7, 8, 65);}
+        100% {color: darkpink;}
+    }
+    
+    .text h2 {
+        animation: cambioDeColor 5s infinite;
+    }
+    
